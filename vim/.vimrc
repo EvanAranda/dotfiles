@@ -29,6 +29,25 @@ else
   Plug 'roxma/vim-hug-neovim-rpc' 
 endif
 
+Plug 'Chiel92/vim-autoformat'
+
+" TypeScript / JavaScript {{{
+
+" TypeScript syntax
+Plug 'leafgarland/typescript-vim'
+Plug 'ianks/vim-tsx'
+
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
+
+" }}}
+
+" Python {{{
+
+Plug 'deoplete-plugins/deoplete-jedi'
+
+" }}}
+
 call plug#end()
 
 " }}}
@@ -42,6 +61,7 @@ filetype off
 syntax on
 filetype plugin indent on
 
+set mouse=a
 set number
 set ruler
 set visualbell
@@ -143,3 +163,17 @@ nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 let g:deoplete#enable_at_startup = 1
 
 " }}}
+
+" Languages {{{
+
+
+" TypeScript / JavaScript {{{
+
+
+
+" }}}
+
+" }}}
+
+
+
