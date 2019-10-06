@@ -31,6 +31,8 @@ endif
 
 Plug 'Chiel92/vim-autoformat'
 
+Plug 'vim-syntastic/syntastic'
+
 " TypeScript / JavaScript {{{
 
 " TypeScript syntax
@@ -161,6 +163,21 @@ nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 " deoplete {{{
 
 let g:deoplete#enable_at_startup = 1
+
+" }}}
+" syntastic {{{
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" Settings by language
+let g:syntastic_python_checkers = ['pylint']
 
 " }}}
 
