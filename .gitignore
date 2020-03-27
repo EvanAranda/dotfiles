@@ -2,3 +2,5 @@
 *~
 auto-save-list
 elpa
+*projectile*
+.emacs.d/fonts
