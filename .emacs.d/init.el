@@ -78,6 +78,16 @@
 	  (evil-define-key 'normal neotree-mode-map (kbd "H") 'neotree-hidden-file-toggle)
 	))
 
+(use-package auto-complete
+  :ensure auto-complete
+  :init (progn
+	))
+
+(use-package lsp-mode
+  :ensure lsp-mode
+  :init (progn
+	))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
