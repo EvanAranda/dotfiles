@@ -34,25 +34,48 @@
 ;;           ;; Do something after the package is initialized
 ;;	))
 
+(use-package all-the-icons
+  :ensure all-the-icons)
+
 (use-package evil
   :ensure evil
   :init (progn
-	  ;; Do something after the package is initialized
 	  (evil-mode 1)
 	))
 
 (use-package powerline
   :ensure powerline
   :init (progn
-	  ;; Do something after the package is initialized
-	  (powerline-default-theme)
+	  (powerline-center-theme)
 	))
 
 (use-package julia-mode
   :ensure julia-mode
   :init (progn
-	  ;; Do something after the package is initialized
+	))
 
+(use-package projectile
+  :ensure projectile
+  :init (progn
+	  (projectile-mode 1)
+	  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+	))
+
+(use-package neotree
+  :ensure neotree
+  :init (progn
+	  (global-set-key [f8] 'neotree-toggle)
+	  (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
+
+	  (evil-define-key 'normal neotree-mode-map (kbd "TAB") 'neotree-enter)
+	  (evil-define-key 'normal neotree-mode-map (kbd "SPC") 'neotree-quick-look)
+	  (evil-define-key 'normal neotree-mode-map (kbd "q") 'neotree-hide)
+	  (evil-define-key 'normal neotree-mode-map (kbd "RET") 'neotree-enter)
+	  (evil-define-key 'normal neotree-mode-map (kbd "g") 'neotree-refresh)
+	  (evil-define-key 'normal neotree-mode-map (kbd "n") 'neotree-next-line)
+	  (evil-define-key 'normal neotree-mode-map (kbd "p") 'neotree-previous-line)
+	  (evil-define-key 'normal neotree-mode-map (kbd "A") 'neotree-stretch-toggle)
+	  (evil-define-key 'normal neotree-mode-map (kbd "H") 'neotree-hidden-file-toggle)
 	))
 
 (custom-set-variables
